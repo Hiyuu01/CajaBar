@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,32 +14,33 @@
 
 
     <ScrollView
-        android:layout_below="@+id/Pedido"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Pedido">
 
     </ScrollView>
         <Button
-            android:text="añadir"
-            android:id="@+id/Boton_Añadir"
-            android:layout_alignParentBottom="true"
+            android:id="@+id/btn_añadir_main_activity"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:text="Enviar"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
+            android:text="añadir" />
+
+    <Button
             android:id="@+id/Boton_Enviar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:text="Cancelar"
-            android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:id="@+id/Boton_Cancelar"
+        android:layout_centerHorizontal="true"
+        android:text="Enviar" />
+
+    <Button
+        android:id="@+id/btn_cancelar_main_activity"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Cancelar" />
 
 
 </RelativeLayout>
