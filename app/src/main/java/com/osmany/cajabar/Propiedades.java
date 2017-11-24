@@ -1,13 +1,24 @@
 package com.osmany.cajabar;
 
+import java.io.Serializable;
+
 /**
  * Created by Osmany on 22/11/2017.
  */
 
-public class Propiedades {
+public class Propiedades implements Serializable {
     String moneda;
     boolean iva;
     boolean mayor18;
+
+
+    public Propiedades() {
+        moneda = "euro";
+        iva = false;
+        mayor18 = true;
+    }
+
+
 
     public String getMoneda() {
         return moneda;
@@ -31,13 +42,6 @@ public class Propiedades {
 
     public void setMayor18(boolean mayor18) {
         this.mayor18 = mayor18;
-    }
-
-    public Propiedades(String moneda, boolean iva, boolean mayor18){
-        this.iva=iva;
-
-        this.moneda=moneda;
-        this.mayor18=mayor18;
     }
 
 }

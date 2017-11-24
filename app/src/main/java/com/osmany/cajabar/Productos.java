@@ -1,14 +1,25 @@
 package com.osmany.cajabar;
 
+import java.io.Serializable;
+
 /**
  * Created by Osmany on 23/11/2017.
  */
 
-public class Productos {
+public class Productos implements Serializable {
     String name;
     double precio;
     int foto;
     boolean mayor;
+
+    public Productos(String name, double precio, int foto, boolean mayor) {
+        this.name = name;
+        this.precio = precio;
+
+        this.foto = foto;
+        this.mayor = mayor;
+
+    }
 
     public String getName() {
         return name;
@@ -40,15 +51,6 @@ public class Productos {
 
     public void setMayor(boolean mayor) {
         this.mayor = mayor;
-    }
-
-    public Productos(String name, double precio, int foto, boolean mayor){
-        this.name=name;
-        this.precio=precio;
-
-        this.foto=foto;
-        this.mayor=mayor;
-
     }
 
 

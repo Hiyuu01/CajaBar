@@ -1,16 +1,14 @@
 package com.osmany.cajabar;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-
-import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
 
+    Propiedades propiedades = new Propiedades();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
