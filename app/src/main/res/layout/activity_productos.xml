@@ -70,16 +70,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center">
 
-                <TableRow>
 
-                    <ImageButton android:src="@mipmap/ic_apletizer" />
-
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView android:text="" />
-                </TableRow>
             </TableLayout>
 
         </ScrollView>

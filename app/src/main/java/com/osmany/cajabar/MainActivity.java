@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        añadir=findViewById(R.id.btn_añadir_main_activity);
+        añadir.setOnClickListener(this);
 
     }
 
@@ -36,11 +38,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+
+
         switch (view.getId()) {
             case R.id.btn_añadir_main_activity:
-                Intent intent = new Intent(this, ProductosActivity.class);
-                intent.putExtra(CARGA_DATOS_CONFIGURACION, propiedades);
-                startActivity(intent);
+                Intent inte = new Intent(this, ProductosActivity.class);
+                //inte.putExtra(CARGA_DATOS_CONFIGURACION, propiedades);
+                startActivity(inte);
                 break;
         }
     }

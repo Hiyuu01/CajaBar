@@ -1,6 +1,5 @@
 package com.osmany.cajabar;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageButton;
@@ -16,7 +15,7 @@ public class ProductosActivity extends AppCompatActivity {
     Stock miStock = new Stock();
     TableLayout miTable;
     Iterator<Productos> iterator = miStock.getList().iterator();
-    TableRow tablaImageButton;
+    TableRow filaButton;
     TableRow filaPrecio;
     ImageButton imageButton;
     TextView textPrecio;
@@ -26,29 +25,33 @@ public class ProductosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        Intent cargaDatos = getIntent();
-        propiedades = (Propiedades) cargaDatos.getSerializableExtra("CARGA_DATOS_CONFIGURACION");
+
+       //propiedades = (Propiedades) getIntent().getSerializableExtra("CARGA_DATOS_CONFIGURACION");
         setContentView(R.layout.activity_productos);
         miTable = findViewById(R.id.table_layout);
 
-        cadenatMoneda = (propiedades.getMoneda());
+       //cadenatMoneda = (propiedades.getMoneda());
+       crearLayoutProductos();
     }
 
 
     public void crearLayoutProductos() {
-        tablaImageButton = new TableRow(getApplicationContext());
-        filaPrecio = new TableRow(getApplicationContext());
+
+
         while (iterator.hasNext()) {
             Productos pr = iterator.next();
+            filaButton = new TableRow(this);
+            filaPrecio = new TableRow(this);
+            imageButton = new ImageButton(this);
 
 
-            imageButton = new ImageButton(getApplicationContext());
-            textPrecio = new TextView(getApplicationContext());
+            //textPrecio = new TextView(getApplicationContext());
             imageButton.setImageResource(pr.getFoto());
-            textPrecio.setText(Double.toString(pr.getPrecio()) + cadenatMoneda);
 
-            tablaImageButton.addView(imageButton);
-            filaPrecio.addView(textPrecio);
+
+            filaButton.addView(imageButton);
+           // filaPrecio.addView(textPrecio);
+            miTable.addView(filaButton);
 
         }
     }
