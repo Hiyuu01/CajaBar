@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.btn_añadir_main_activity:
                 Intent inte = new Intent(this, ProductosActivity.class);
-                //inte.putExtra(CARGA_DATOS_CONFIGURACION, propiedades);
+                inte.putExtra(CARGA_DATOS_CONFIGURACION, propiedades);
                 startActivity(inte);
                 break;
         }

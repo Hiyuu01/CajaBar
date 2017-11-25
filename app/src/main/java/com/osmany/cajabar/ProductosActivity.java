@@ -36,22 +36,24 @@ public class ProductosActivity extends AppCompatActivity {
 
 
     public void crearLayoutProductos() {
-
-
+        int contadorFila = 0;
         while (iterator.hasNext()) {
             Productos pr = iterator.next();
             filaButton = new TableRow(this);
-            filaPrecio = new TableRow(this);
-            imageButton = new ImageButton(this);
+            while (contadorFila != 3) {
 
 
-            //textPrecio = new TextView(getApplicationContext());
-            imageButton.setImageResource(pr.getFoto());
+                //filaPrecio = new TableRow(this);
+                imageButton = new ImageButton(this);
+
+                imageButton.setImageResource(pr.getFoto());
+                filaButton.addView(imageButton);
+                contadorFila++;
 
 
-            filaButton.addView(imageButton);
-           // filaPrecio.addView(textPrecio);
+            }
             miTable.addView(filaButton);
+            contadorFila = 0;
 
         }
     }
