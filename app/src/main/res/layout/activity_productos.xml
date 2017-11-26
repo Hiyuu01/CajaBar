@@ -15,7 +15,6 @@
             android:id="@+id/btn_Suma"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:onClick="eventoAñadir"
             android:text="+"/>
 
         <LinearLayout
@@ -69,7 +68,7 @@
         <ScrollView
             android:id="@+id/scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="400dp"
             android:foregroundGravity="center">
 
             <TableLayout
@@ -84,6 +83,7 @@
         </ScrollView>
 
         <FrameLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
