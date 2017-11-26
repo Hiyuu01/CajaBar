@@ -8,24 +8,31 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Iterator;
 
+import static com.osmany.cajabar.ConfiguracionActivity.DATOS_DE_LA_ACTIVIDAD_PMAIN_ACTIVITY;
+import static com.osmany.cajabar.ConfiguracionActivity.DATOS_DE_LA_ACTIVIDAD_PROPIEDADES_A_PMAIN_ACTIVITY;
 import static com.osmany.cajabar.ProductosActivity.CARGA_DATOS_CONFIGURACION;
 import static com.osmany.cajabar.ProductosActivity.LISTA_PRODUCTOS_NUEVOS;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String PEDIDO_NUEVO = "pedidoNuevo";
-    public static final int REQUEST_CODE = 10;
-    Propiedades propiedades = new Propiedades();
+    public static final int REQUEST_CODE_PRODUCTOS = 10;
+    public static final int REQUEST_CODE_CONFIGURACION = 5;
     Button añadir;
     TextView pedido;
     Stock stockNuevoProducto = new Stock();
+    Stock listaProductos = new Stock();
     LinearLayout miLineal;
+    FrameLayout linea;
+    LinearLayout impuestos, totales;
+    private Propiedades propiedades;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +40,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         añadir=findViewById(R.id.btn_añadir_main_activity);
         añadir.setOnClickListener(this);
-
+        listaProductos.getList().clear();
         miLineal = findViewById(R.id.linea_del_Scroll);
-
-
+        propiedades = new Propiedades();
+        linea = findViewById(R.id.separador_main_activity);
+        impuestos = findViewById(R.id.layout_impuestos);
+        totales = findViewById(R.id.layout_totales_main_activity);
 
     }
 
@@ -49,7 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent config = new Intent(getApplicationContext(),ConfiguracionActivity.class);
-        startActivity(config);
+        config.putExtra(DATOS_DE_LA_ACTIVIDAD_PMAIN_ACTIVITY, propiedades);
+        startActivityForResult(config, REQUEST_CODE_CONFIGURACION);
         return true;
     }
 
@@ -62,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent inte = new Intent(this, ProductosActivity.class);
                 inte.putExtra(LISTA_PRODUCTOS_NUEVOS, stockNuevoProducto);
                 inte.putExtra(CARGA_DATOS_CONFIGURACION, propiedades);
-                startActivityForResult(inte, REQUEST_CODE);
+                startActivityForResult(inte, REQUEST_CODE_PRODUCTOS);
                 break;
         }
     }
@@ -70,8 +80,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
+        if (requestCode == REQUEST_CODE_PRODUCTOS && resultCode == RESULT_OK) {
             stockNuevoProducto = (Stock) data.getSerializableExtra(PEDIDO_NUEVO);
+            listaProductos.getList().add(stockNuevoProducto.getList().get(0));
+            creaLayouts();
+        }
+        if (requestCode == REQUEST_CODE_CONFIGURACION && requestCode == RESULT_OK) {
+            propiedades = (Propiedades) data.getSerializableExtra(DATOS_DE_LA_ACTIVIDAD_PROPIEDADES_A_PMAIN_ACTIVITY);
             creaLayouts();
         }
     }
@@ -124,6 +139,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             miLineal.addView(linearLayout);
 
         }
+        linea.setVisibility(View.VISIBLE);
+        impuestos.setVisibility(View.VISIBLE);
+        totales.setVisibility(View.VISIBLE);
 
 
     }

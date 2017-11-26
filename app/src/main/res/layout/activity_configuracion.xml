@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.osmany.cajabar.ConfiguracionActivity">
 <LinearLayout
     android:id="@+id/Radio_Layout"
-    android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
     <TextView
-        android:paddingTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
         android:text="Moneda de Pago"/>
 
     <RadioGroup
@@ -22,37 +21,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <RadioButton
-            android:layout_width="wrap_content"
             android:id="@+id/Radio_Euro"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
             android:text="Euro(€)" />
         <RadioButton
-            android:layout_width="wrap_content"
             android:id="@+id/Radio_Dollar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dollar($)" />
         <RadioButton
-            android:layout_width="wrap_content"
             android:id="@+id/Radio_Bitcoin"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bitcoin (BTC)" />
     </RadioGroup>
 </LinearLayout>
     <View
-        android:layout_below="@+id/Radio_Layout"
         android:id="@+id/view1"
-        android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
-        android:layout_height="1dp">
+        android:layout_height="1dp"
+        android:layout_below="@+id/Radio_Layout"
+        android:background="@color/colorPrimaryDark">
 
     </View>
     <LinearLayout
         android:id="@+id/Radio_Layout_Dos"
-        android:layout_below="@+id/view1"
-        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view1"
+        android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,39 +60,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <RadioButton
-            android:id="@+id/Radio_ITV"
+            android:id="@+id/Radio_IVA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="IVA 21%"/>
         <RadioButton
             android:id="@+id/Radio_IGIC"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="IGIC 6%"/>
     </RadioGroup>
     </LinearLayout>
     <View
-        android:layout_below="@+id/Radio_Layout_Dos"
         android:id="@+id/view2"
-        android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
-        android:layout_height="1dp">
+        android:layout_height="1dp"
+        android:layout_below="@+id/Radio_Layout_Dos"
+        android:background="@color/colorPrimaryDark">
 
     </View>
 
     <CheckBox
-        android:layout_below="@+id/view2"
+        android:id="@+id/check_propiedades_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mostrar Bebidas Alcohólicas"
-        android:checked="true"/>
+        android:layout_below="@+id/view2"
+        android:text="Mostrar Bebidas Alcohólicas" />
     <Button
         android:id="@+id/btn_Guardar"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:text="Guardar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Guardar" />
 
 </RelativeLayout>

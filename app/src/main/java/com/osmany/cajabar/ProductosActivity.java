@@ -49,6 +49,7 @@ public class ProductosActivity extends AppCompatActivity implements View.OnClick
         miTable = findViewById(R.id.table_layout);
         propiedades = (Propiedades) getIntent().getSerializableExtra(CARGA_DATOS_CONFIGURACION);
         listaPedido = (Stock) getIntent().getSerializableExtra(LISTA_PRODUCTOS_NUEVOS);
+        listaPedido.getList().clear();
         cadenatMoneda = (propiedades.getMoneda());
         crearLayoutProductos();
         cantidad_productos = findViewById(R.id.tv_cantidad_productos);
