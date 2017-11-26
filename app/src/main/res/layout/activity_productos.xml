@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
     tools:context="com.osmany.cajabar.ProductosActivity">
 
@@ -14,6 +15,7 @@
             android:id="@+id/btn_Suma"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
+            android:onClick="eventoAñadir"
             android:text="+"/>
 
         <LinearLayout
@@ -21,9 +23,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center">
             <TextView
+                android:id="@+id/tv_cantidad_productos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="1"
                 android:textSize="30dp"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -33,12 +36,14 @@
                 android:text="Precio:"
                 android:textSize="30dp" />
             <TextView
+                android:id="@+id/tv_precio_producto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:text="0"
                 android:textSize="30dp" />
             <TextView
+                android:id="@+id/tv_moneda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -56,25 +61,48 @@
 
     </FrameLayout>
 
-    <FrameLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ScrollView
+            android:id="@+id/scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center">
 
             <TableLayout
                 android:id="@+id/table_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center">
+                android:layout_height="wrap_content">
 
 
             </TableLayout>
 
+
         </ScrollView>
 
-    </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_añadir_productos_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="añadir" />
+
+            <Button
+                android:id="@+id/btn_cancelar_productos_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="cancelar" />
+        </FrameLayout>
+    </RelativeLayout>
+
 
 </LinearLayout>

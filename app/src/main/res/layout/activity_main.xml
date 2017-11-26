@@ -14,9 +14,11 @@
 
 
     <ScrollView
+        android:id="@+id/scroll_avtivity_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Pedido">
+
 
     </ScrollView>
         <Button

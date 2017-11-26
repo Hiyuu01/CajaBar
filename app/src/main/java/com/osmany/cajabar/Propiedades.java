@@ -13,9 +13,9 @@ public class Propiedades implements Serializable {
 
 
     public Propiedades() {
-        moneda = "euro";
-        iva = false;
-        mayor18 = true;
+        this.moneda = "€";
+        this.iva = false;
+        this.mayor18 = true;
     }
 
 

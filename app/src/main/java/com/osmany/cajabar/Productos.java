@@ -7,18 +7,27 @@ import java.io.Serializable;
  */
 
 public class Productos implements Serializable {
+    int id;
     String name;
     double precio;
     int foto;
     boolean mayor;
 
-    public Productos(String name, double precio, int foto, boolean mayor) {
-        this.name = name;
+    public Productos(String name, int id, double precio, int foto, boolean mayor) {
+        this.id = id;
         this.precio = precio;
-
+        this.name = name;
         this.foto = foto;
         this.mayor = mayor;
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
