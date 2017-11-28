@@ -13,15 +13,26 @@ public class Productos implements Serializable {
     int foto;
     boolean mayor;
 
+
+    int cantidad;
+
     public Productos(String name, int id, double precio, int foto, boolean mayor) {
         this.id = id;
         this.precio = precio;
         this.name = name;
         this.foto = foto;
         this.mayor = mayor;
+        cantidad = 1;
 
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
     public int getId() {
         return id;
     }

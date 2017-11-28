@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
-                android:text="Precio:"
+                android:text="@string/precio"
                 android:textSize="30dp" />
             <TextView
                 android:id="@+id/tv_precio_producto"
@@ -93,14 +93,14 @@
                 android:id="@+id/btn_añadir_productos_activity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="añadir" />
+                android:text="@string/a_adir" />
 
             <Button
                 android:id="@+id/btn_cancelar_productos_activity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:text="cancelar" />
+                android:text="@string/cancelar" />
         </FrameLayout>
     </RelativeLayout>
 

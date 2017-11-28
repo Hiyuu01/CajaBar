@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">CajaBar</string>
+    <string name="pedido">Pedido</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="enviar">Enviar</string>
+    <string name="a_adir">añadir</string>
+    <string name="precio">Precio:</string>
+    <string name="moneda_de_pago">Moneda de Pago</string>
+    <string name="impuestos">Impuestos</string>
+    <string name="guardar">Guardar</string>
+    <string name="mostrar_bebidas_alcoh_licas">Mostrar Bebidas Alcohólicas</string>
 </resources>

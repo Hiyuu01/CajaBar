@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
-        android:text="Moneda de Pago"/>
+        android:text="@string/moneda_de_pago" />
 
     <RadioGroup
         android:id="@+id/Radio_G1"
@@ -54,7 +54,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Impuestos"/>
+        android:text="@string/impuestos" />
     <RadioGroup
         android:id="@+id/Radio_G2"
         android:layout_width="wrap_content"
@@ -85,13 +85,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/view2"
-        android:text="Mostrar Bebidas Alcohólicas" />
+        android:text="@string/mostrar_bebidas_alcoh_licas" />
     <Button
         android:id="@+id/btn_Guardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="Guardar" />
+        android:text="@string/guardar" />
 
 </RelativeLayout>

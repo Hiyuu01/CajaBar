@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CajaBar</string>
+    <string name="pedido">Order</string>
+    <string name="cancelar">Cancel</string>
+    <string name="enviar">Send</string>
+    <string name="a_adir">Add</string>
+    <string name="precio">Cost</string>
+    <string name="moneda_de_pago">Divisa</string>
+    <string name="impuestos">Taxes</string>
+    <string name="guardar">Save</string>
+    <string name="mostrar_bebidas_alcoh_licas">Show  Alcoholic\'s Drinks</string>
+</resources>

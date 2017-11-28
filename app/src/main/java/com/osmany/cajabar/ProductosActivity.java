@@ -67,6 +67,7 @@ public class ProductosActivity extends AppCompatActivity implements View.OnClick
 
 
     public void crearLayoutProductos() {
+
         Display ventana = getWindowManager().getDefaultDisplay();
         Point tamaño = new Point();
         ventana.getSize(tamaño);
@@ -82,6 +83,13 @@ public class ProductosActivity extends AppCompatActivity implements View.OnClick
             filaButton.setGravity(Gravity.CENTER);
             while (contadorFila != 3) {
                 Productos pr = iterator.next();
+                if (!propiedades.isMayor18() && pr.isMayor()) {
+                    pr.setFoto(R.mipmap.ic_prohibido);
+                    pr.setCantidad(0);
+                    pr.setId(0);
+                    pr.setPrecio(0);
+
+                }
                 TableRow.LayoutParams params = new TableRow.LayoutParams();
                 params.width = tamañoTotal;
                 params.height = tamañoTotal;
@@ -246,14 +254,13 @@ public class ProductosActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.btn_añadir_productos_activity:
                 String nom = getTitle().toString();
-                int cant = Integer.parseInt(cantidad_productos.getText().toString());
 
                 Iterator<Productos> iterator = miStock.getList().iterator();
 
                 while (iterator.hasNext()) {
                     Productos producto = iterator.next();
                     if (producto.getName().equals(nom)) {
-
+                        producto.setCantidad(Integer.parseInt(cantidad_productos.getText().toString()));
                         pedidoNuevo.add(producto);
 
                     }
@@ -262,7 +269,6 @@ public class ProductosActivity extends AppCompatActivity implements View.OnClick
                 listaPedido.setList(pedidoNuevo);
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.putExtra(PEDIDO_NUEVO, listaPedido);
-                intent.putExtra("cantidad", cant);
                 setResult(RESULT_OK, intent);
                 finish();
                 break;

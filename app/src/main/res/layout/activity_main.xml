@@ -9,7 +9,7 @@
         android:id="@+id/Pedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pedido"/>
+        android:text="@string/pedido" />
 
 
 
@@ -117,7 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:text="añadir" />
+        android:text="@string/a_adir" />
 
     <Button
             android:id="@+id/Boton_Enviar"
@@ -125,7 +125,7 @@
         android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Enviar" />
+        android:text="@string/enviar" />
 
     <Button
         android:id="@+id/btn_cancelar_main_activity"
@@ -133,7 +133,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="Cancelar" />
+        android:text="@string/cancelar" />
 
 
 </RelativeLayout>
